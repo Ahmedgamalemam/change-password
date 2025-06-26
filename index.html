@@ -88,9 +88,8 @@
         background-color: #edf7ff !important;
       }
 
-      .main-login > div {
-        height: 85%;
-        width: 63.2%;
+      .main-login > section {
+        min-width: 48.5%;
       }
 
       section:has(form) {
@@ -98,13 +97,13 @@
         padding: 2rem 1.5rem;
       }
       section:has(form) > img {
-        width: 34%;
-        height: 8rem;
+        width: 11.6rem;
+        height: 7rem;
       }
       section:has(form) > div {
         text-align: center;
         h3 {
-          font-size: 2vw;
+          font-size: clamp(1rem, 1.5rem, 2rem);
           font-weight: 700;
           line-height: normal;
         }
@@ -119,6 +118,19 @@
       .heading,
       .intro {
         display: none;
+      }
+
+      #attributeList ul {
+        padding: 0;
+      }
+
+      .attrEntry {
+        text-align: start;
+      }
+
+      .attrEntry > label {
+        font-weight: 400;
+        margin-bottom: 0.3rem;
       }
 
       .helpLink,
@@ -154,6 +166,16 @@
       #emailVerificationControl_error_message {
         color: rgb(211, 3, 3);
       }
+
+      @media (max-width: 840px) {
+        .main-login {
+          padding: 0rem 5% 0;
+        }
+
+        .main-login > section {
+          min-width: 100%;
+        }
+      }
     </style>
 
     <link
@@ -168,7 +190,6 @@
     <main class="main-login d-flex align-items-center">
       <section
         class="d-flex flex-column align-items-center back-color-light rounded-3 m-auto"
-        style="min-width: 48.5%"
       >
         <img
           class="mb-3"
@@ -178,7 +199,9 @@
 
         <div>
           <h3 class="color-blue-dark">Your New Password</h3>
-          <p style="color: #4b5059">Add new password information</p>
+          <p style="color: #4b5059; font-size: 1rem">
+            Add new password information
+          </p>
         </div>
 
         <form id="api" class="w-100" method="post" autocomplete="off">
